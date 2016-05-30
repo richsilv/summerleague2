@@ -1,0 +1,10 @@
+h4 Fixtures
+ul.side-nav.menu.vertical
+  if fixtures
+    each fixture, ind in fixtures
+      if (ind !== 0)
+        hr
+      li 
+        h6
+          a(href='/fixtures/'+fixture.url)=fixture.name
+        h6.subheader=formattedDate(fixture.dateTime)

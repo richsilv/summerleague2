@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Summer League Website
+    link(href='http://fonts.googleapis.com/css?family=Faster+One:400,900,700,500', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic', rel='stylesheet', type='text/css')
+    link(href='/stylesheets/main.css', rel='stylesheet', type='text/css')
+    link(rel='icon', sizes='16x16 24x24 32x32 48x48 64x64', href='/summerleague.ico?v=1')
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    meta(name='viewport', content='width=device-width, user-scalable=no')
+    block header
+      
+  body
+    #wrapper.row
+      #top-menu.top-bar
+        .top-bar-left
+          ul.menu
+            li
+              a(href='/') Home
+            li
+              a(href='/about/history') About
+            li
+              a(href='/fixtures') Fixtures
+      #header-pic
+        h1 Summer League
+      .medium-3.show-for-medium.columns.summerSideBar
+        include ./sidebar.jade
+      .medium-9.small-12.columns
+        block content
+          

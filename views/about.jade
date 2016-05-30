@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  ul.menu
+    li(class=section === 'history' ? 'active': '')
+      a(href='/about/history') History
+    li(class=section === 'clubs' ? 'active': '')
+      a(href='/about/clubs') Clubs
+    li(class=section === 'rules' ? 'active': '')
+      a(href='/about/rules') Rules &amp; Regulations
+  hr
+      
+  if (section === 'history')
+    h2 History
+    !{history}
+  if (section === 'clubs')
+    h2 Clubs
+    each club in clubs
+      .callout
+        h3=club.name
+        p=club.description
+        h5
+          a(href=club.website) Website
+  if (section === 'rules')
+    h2 Rules &amp; regulations
+    !{rules}
+    

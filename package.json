@@ -1,0 +1,32 @@
+{
+  "name": "summerleague",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "standard",
+    "start": "node ./app.js",
+    "build": "npm-run-all -p build:*",
+    "build:scss": "node-sass --include-path node_modules/foundation-sites/scss styles/main.scss -o public/stylesheets",
+    "watch": "npm-run-all -p build:* -p watch:*",
+    "watch:scss": "node-sass --include-path node_modules/foundation-sites/scss -w styles/ styles/main.scss -o public/stylesheets",
+    "watch:server": "nodemon -i styles/ app.js"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "body-parser": "~1.13.2",
+    "config": "^1.20.4",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "foundation-sites": "^6.2.3",
+    "jade": "~1.11.0",
+    "moment": "^2.13.0",
+    "mongojs": "^2.4.0",
+    "morgan": "~1.6.1",
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "npm-run-all": "^2.1.1",
+    "serve-favicon": "~2.3.0",
+    "standard": "^7.1.1"
+  }
+}

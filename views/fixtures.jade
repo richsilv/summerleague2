@@ -1,0 +1,20 @@
+extends layout
+
+block header
+  link(rel='stylesheet', href='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css')
+  script(src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js')
+  script(src='/javascripts/gpx.js')
+
+block content
+  h2 Fixtures
+  hr
+  each fixture in fixtures
+    if (!fixtureName || fixtureName === fixture.url)
+      h3=fixture.name
+      h4.subheader=formattedDate(fixture.dateTime)
+      .map-holder(data-map-center=fixture.mapCenter data-gpx=fixture.gpx)
+      h5 Course Description
+      p!=fixture.courseDescription
+  script(src='/javascripts/map-render.js')
+
+  

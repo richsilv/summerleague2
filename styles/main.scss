@@ -1,0 +1,7 @@
+@import "./layout";
+@import "./fixtures";
+
+@import 'settings';
+@import "foundation";
+
+@include foundation-everything;

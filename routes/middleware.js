@@ -3,7 +3,7 @@ const moment = require('moment')
 module.exports = {
   populateContext: (app, db) => {
     app.use((req, res, next) => {
-      db.fixtures.find((err, docs) => {
+      db.fixtures.find().sort({ dateTime: 1 }, (err, docs) => {
         if (err) {
           return res.render('error', {
             message: 'Database error',
